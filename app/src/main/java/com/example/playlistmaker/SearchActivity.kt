@@ -9,7 +9,8 @@ import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
 
-class FindActivity : AppCompatActivity() {
+private var searchText: String = ""
+class SearchActivity : AppCompatActivity() {
     @SuppressLint("WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,15 +29,26 @@ class FindActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                // empty
+                searchText = s.toString()
                 clearButton.visibility = clearButtonVisibility(s)
             }
 
             override fun afterTextChanged(s: Editable?) {
                 // empty
             }
+
         }
         inputEditText.addTextChangedListener(simpleTextWatcher)
+        inputEditText.setText(searchText)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putString("searchText", searchText)
+        super.onSaveInstanceState(outState)
+    }
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        searchText = savedInstanceState.getString("searchText") ?: ""
     }
 
     private fun clearButtonVisibility(s: CharSequence?): Int {
