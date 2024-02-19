@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/some_id"
+    android:background="@color/settings_background"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:text="@string/main_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="12dp"
+            android:textSize="26sp"
+            tools:ignore="RtlSymmetry"
+            style="SettingsTextColor"
+            />
+
+
+    </LinearLayout>
+    <FrameLayout
+        android:layout_marginTop="24dp"
+        style="@style/SettingsFrameLayoutStyle"
+        >
+        <TextView
+            android:text="@string/settings_black"
+            style="@style/SettingsTextStyle"
+            />
+        <Switch
+            android:id="@+id/switch_on"
+            tools:ignore="RtlSymmetry,UseSwitchCompatOrMaterialXml"
+            style="@style/SettingsImageStyle"
+            />
+
+    </FrameLayout>
+    <FrameLayout
+        style="@style/SettingsFrameLayoutStyle"
+        >
+        <TextView
+            android:text="@string/settings_share"
+            style="@style/SettingsTextStyle"
+            tools:ignore="RtlSymmetry"
+            />
+        <ImageButton
+            android:id="@+id/settingsShare"
+            style="@style/SettingsImageStyle"
+            android:src="@drawable/share"
+             />
+    </FrameLayout>
+    <FrameLayout
+        style="@style/SettingsFrameLayoutStyle"
+        >
+        <TextView
+            android:text="@string/settings_support"
+            style="@style/SettingsTextStyle"
+            tools:ignore="RtlSymmetry" />
+        <ImageButton
+            android:id="@+id/settingsSupport"
+            android:src="@drawable/support"
+            style="@style/SettingsImageStyle"
+            tools:ignore="RtlSymmetry" />
+    </FrameLayout>
+    <FrameLayout
+        style="@style/SettingsFrameLayoutStyle"
+        >
+        <TextView
+            android:text="@string/settings_user_agreement"
+            style="@style/SettingsTextStyle"
+            tools:ignore="RtlSymmetry" />
+        <ImageButton
+            android:id="@+id/settingsUserAgreement"
+            android:src="@drawable/arrow_forward"
+            style="@style/SettingsImageStyle"
+            tools:ignore="RtlSymmetry" />
+    </FrameLayout>
+
+</LinearLayout>
